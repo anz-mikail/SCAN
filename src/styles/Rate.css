@@ -1,0 +1,133 @@
+.rate{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: inter, Helvetica, sans-serif;
+    width: 415px;
+    height: 540px;
+    border-radius: 10px;
+    /*border: var(--gold) solid 3px;*/
+    box-shadow:
+            20px 20px 20px var(--grey_border),
+            -20px -20px 20px var(--grey_border),
+            20px -20px 20px var(--grey_border),
+            -20px 20px 20px var(--grey_border);
+}
+
+
+.rateHeader1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gold);
+    height: 132px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.rateHeader2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--blue);
+    height: 132px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.rateHeader3 {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: var(--white);
+    height: 132px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+
+
+.rate .text {
+    margin-left: 20px;
+}
+.rate .text h2{
+    font-size: 30px;
+}
+.rate .text p {
+    font-size: 18px;
+}
+
+
+
+.rateHeader1  img {
+    width: 92.24px;
+    height: 83.15px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.rateHeader2  img {
+    width: 92.24px;
+    height: 83.15px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.rateHeader3 img {
+    width: 92.24px;
+    height: 83.15px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+
+
+.rateRate {
+    margin:30px;
+    padding: 0;
+}
+.rateRate span{
+    display: flex;
+}
+
+.rateRate span :nth-child(1) {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+}
+
+.rateRate span :nth-child(2) {
+    text-decoration: line-through;
+    margin: 0 30px;
+    padding: 0;
+    color: var(--grey);
+    font-size: 35px;
+}
+.rateRate :nth-child(2)  {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.rateText {
+    margin:0 30px;
+    padding: 0;
+}
+.rateText p {
+    margin: 7px 0;
+    padding: 0;
+    font-size: 18px;
+}
+.rateText :nth-child(1) {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.rate button {
+    height: 59px;
+    width: 355px;
+    margin: 30px;
+    background-color: var(--btn_1);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}

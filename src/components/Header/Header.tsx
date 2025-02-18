@@ -1,0 +1,53 @@
+import React, {useContext} from "react";
+import {Link} from "react-router-dom";
+import {observer} from "mobx-react-lite";
+
+import "../../styles/Header.css"
+
+import Log_1 from "./Log_1";
+import Log_2 from "./Log_2";
+import {Context} from "../../index";
+
+
+
+function Header({change_btn, menuActive}) {
+
+    const {store} = useContext(Context);
+
+    return (
+        <nav className={menuActive ? 'navbar' : 'navbar active'}>
+            <div className={menuActive ? 'log' : 'log active'}>
+                <div className={menuActive ? 'log-1' : 'log-1 active'}><Log_1/></div>
+                <div className={menuActive ? 'log-2' : 'log-2 active'}><Log_2/></div>
+            </div>
+
+            <button className={menuActive ? 'burger-btn' : 'burger-btn active'}
+                    onClick={change_btn}>
+                <span></span><span></span><span></span>
+            </button>
+
+            <button className={menuActive ? 'burger-btn2' : 'burger-btn2 active'}
+                    onClick={change_btn}>
+                x
+            </button>
+
+            <ul className='nav-1'>
+                <Link className='link' to="/">Главная</Link>
+                <Link className='link' to="/result">Тарифы</Link>
+                <Link className='link' to="#">FAQ</Link>
+            </ul>
+
+            <ul className={store.isAuth ? 'nav-2' : 'nav-2 active'}>
+                <Link className='link-1' to="/loginForm">Зарегистрироваться</Link>
+                <p className='link-2'>|</p>
+                <Link className='link-3' to="/singIn">Войти</Link>
+            </ul>
+            <ul className={!store.isAuth ? 'nav-3 active' : 'nav-3'}>
+                <button className='link-3' onClick = {store.logout} >Выйти</button>
+            </ul>
+        </nav>
+    )
+}
+
+
+export default observer(Header);

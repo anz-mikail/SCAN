@@ -1,0 +1,32 @@
+.SlickSlider {
+    height: 250px;
+    margin: 30px;
+    padding-bottom: 60px;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 225px;
+    user-select: none;
+    margin:15px;
+    border-radius: 10px;
+    box-shadow:
+            7px 7px 7px var(--grey),
+            -7px -7px 7px var(--grey),
+            7px -7px 7px var(--grey),
+            -7px 7px 7px var(--grey);
+}
+
+@media screen and (max-width: 768px) {
+    .image {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .image {
+        height: 188px;
+    }
+}
