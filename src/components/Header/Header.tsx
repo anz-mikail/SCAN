@@ -37,13 +37,12 @@ function Header({change_btn, menuActive}) {
                 <Link className='link' to="#">FAQ</Link>
             </ul>
 
-            <ul className={store.isAuth ? 'nav-2' : 'nav-2 active'}>
+            <ul className={!store.isAuth ? 'nav-2 ' : 'nav-2 active'}>
                 <Link className='link-1' to="#">Зарегистрироваться</Link>
                 <p className='link-2'>|</p>
                 <Link className='link-3' to="/singIn">Войти</Link>
-                {/*<h1>{`${store.isAuth}`}</h1>*/}
             </ul>
-            <ul className={!store.isAuth ? 'nav-3 active' : 'nav-3'}>
+            <ul className={!store.isAuth ? 'nav-3 active' : 'nav-3 active'}>
                 <Info_1/>
                 <Info_2/>
             </ul>
