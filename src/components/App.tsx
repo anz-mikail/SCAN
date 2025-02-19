@@ -53,12 +53,12 @@ function App() {
 
                 {/*<h1>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : 'АВТОРИЗУЙТЕСЬ'}</h1>*/}
                 <main>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/singIn" element={<SingIn/>}/>
-                    <Route path="/search" element={<Search/>}/>
-                    <Route path="/result" element={<Result/>}/>
-                </Routes>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/singIn" element={<SingIn/>}/>
+                        <Route path="/search" element={<Search/>}/>
+                        <Route path="/result" element={<Result/>}/>
+                    </Routes>
                 </main>
                 <Footer/>
             </div>

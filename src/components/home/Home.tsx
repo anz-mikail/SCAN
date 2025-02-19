@@ -30,7 +30,7 @@ function Home() {
                 </div>
                 <div className='Home-btn'>
                     <Link to='/search'
-                          className={!store.isAuth? "link": "link active"}>
+                          className={store.isAuth? "link": "link active"}>
                         Запросить данные
                     </Link>
                 </div>

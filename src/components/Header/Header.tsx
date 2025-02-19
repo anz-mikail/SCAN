@@ -7,13 +7,13 @@ import "../../styles/Header.css"
 import Log_1 from "./Log_1";
 import Log_2 from "./Log_2";
 import {Context} from "../../index";
+import Info_1 from "./Info-1";
+import Info_2 from "./Info-2";
 
 
 
 function Header({change_btn, menuActive}) {
-
     const {store} = useContext(Context);
-
     return (
         <nav className={menuActive ? 'navbar' : 'navbar active'}>
             <div className={menuActive ? 'log' : 'log active'}>
@@ -38,12 +38,14 @@ function Header({change_btn, menuActive}) {
             </ul>
 
             <ul className={store.isAuth ? 'nav-2' : 'nav-2 active'}>
-                <Link className='link-1' to="/loginForm">Зарегистрироваться</Link>
+                <Link className='link-1' to="#">Зарегистрироваться</Link>
                 <p className='link-2'>|</p>
                 <Link className='link-3' to="/singIn">Войти</Link>
+                {/*<h1>{`${store.isAuth}`}</h1>*/}
             </ul>
             <ul className={!store.isAuth ? 'nav-3 active' : 'nav-3'}>
-                <button className='link-3' onClick = {store.logout} >Выйти</button>
+                <Info_1/>
+                <Info_2/>
             </ul>
         </nav>
     )

@@ -1,5 +1,6 @@
 import React, {FC, useContext, useState} from "react";
 import {observer} from "mobx-react-lite";
+import {Link} from "react-router-dom";
 
 import "../../styles/Singin.css"
 import {Context} from "../../index";
@@ -11,14 +12,14 @@ const SingIn: FC = () => {
     const [password, setPassword] = useState("");
     const {store} = useContext(Context);
 
-    if (!store.isAuth){
-        return (
-            <>
-                <h1>Вы авторизованы</h1>
-            </>
-        )
-    }
-    else {
+    // if (!store.isAuth){
+    //     return (
+    //         <div className="SingIn-text">
+    //             <h1>Вы авторизованы</h1>
+    //         <div/>
+    //     )
+    // }
+    // else {
         return (
             <div className='SingIn-Body'>
                 <div className="SingIn-text">
@@ -27,20 +28,19 @@ const SingIn: FC = () => {
                 <div className="SingIn">
                     <div className="choice">
                         <div>
-                            <p><a href="#">Войти</a></p>
+                            <Link className="ChoiceLink" to="/singIn"
+                            >Войти<span></span></Link>
                         </div>
                         <div>
-                            <p><a href="#">Зарегистрироваться</a></p>
+                            <Link className="ChoiceLink" to="#"
+                            >Зарегистрироваться <span></span></Link>
                         </div>
-                        <button></button>
-                        <button></button>
                     </div>
 
                     <p>Логин или номер телефона:</p>
 
                     <input className="input"
                            type="text"
-                           placeholder="Email"
                            onChange={e => setLogin(e.target.value)}
                            value={login}/>
 
@@ -48,11 +48,10 @@ const SingIn: FC = () => {
 
                     <input className="input"
                            type="password"
-                           placeholder="Пароль"
                            onChange={e => setPassword(e.target.value)}
                            value={password}/>
 
-                    <button className='SingIn-btn'
+                    <button className={password && login? 'SingIn-btn active' : 'SingIn-btn'}
                             onClick={() => store.login(login, password)}
                     >Войти</button>
 
@@ -68,7 +67,7 @@ const SingIn: FC = () => {
 
         )
     }
-}
+// }
 
 
 export default observer(SingIn);
