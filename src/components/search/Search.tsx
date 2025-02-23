@@ -12,9 +12,9 @@ import SelectINN from "./SelectINN";
 function Search() {
     const {store} = useContext(Context);
 
-    const [inn, setInn] = useState(0);
-    const [tonality, setTonality] = useState("");
-    const [limit, setLimit] = useState(0);
+    const [inn, setInn] = useState(7710137066);
+    const [tonality, setTonality] = useState("any");
+    const [limit, setLimit] = useState(5);
 
     const [maxFullness, setMaxFullness] = useState(false);
     const [onlyMainRole, setOnlyMainRole] = useState(false);
@@ -27,66 +27,63 @@ function Search() {
     const [dateStart, setDateStart] = useState(null);
     const [dateEnd, setDateEnd] = useState(null);
 
-    const test = [{
-        "issueDateInterval": {
-            "startDate": "2019-01-01T00:00:00+03:00",
-            "endDate": "2022-08-31T23:59:59+03:00"
-        },
-        "searchContext": {
-            "targetSearchEntitiesContext": {
-                "targetSearchEntities": [
-                    {
-                        "type": "company",
-                        "sparkId": null,
-                        "entityId": null,
-                        "inn": 7710137066,
-                        "maxFullness": true,
-                        "inBusinessNews": null
-                    }
-                ],
-                "onlyMainRole": true,
-                "tonality": "any",
-                "onlyWithRiskFactors": false,
-                "riskFactors": {
-                    "and": [true],
-                    "or": [],
-                    "not": []
-                },
-                "themes": {
-                    "and": [],
-                    "or": [],
-                    "not": [true]
+
+    let startDate = "2019-01-01T00:00:00+03:00"
+    let endDate = "2022-08-31T23:59:59+03:00"
+
+    const intervalType = 'month'
+    const histogramTypes = ['totalDocuments']
+    const issueDateInterval = {
+        startDate,
+        endDate,
+    }
+    const searchContext = {
+        "targetSearchEntitiesContext": {
+            "targetSearchEntities": [
+                {
+                    "type": "company",
+                    "sparkId": null,
+                    "entityId": null,
+                    inn,
+                    maxFullness,
+                    inBusinessNews
                 }
-            },
-            "themesFilter": {
+            ],
+            onlyMainRole,
+            tonality,
+            onlyWithRiskFactors,
+            "riskFactors": {
                 "and": [],
                 "or": [],
-                "not": [true]
+                "not": []
+            },
+            "themes": {
+                "and": [],
+                "or": [],
+                "not": []
             }
-        },
-        "searchArea": {
-            "includedSources": [],
-            "excludedSources": [],
-            "includedSourceGroups": [],
-            "excludedSourceGroups": []
-        },
-        "attributeFilters": {
-            "excludeTechNews": true,
+        }
+    }
+    const similarMode ="duplicates"
+    const sortType = "sourceInfluence"
+    const sortDirectionType =  "desc"
+    const attributeFilters = {
+        "excludeTechNews": true,
             "excludeAnnouncements": true,
             "excludeDigests": true
-        },
-        "similarMode": "duplicates",
-        "limit": 1000,
-        "sortType": "sourceInfluence",
-        "sortDirectionType": "desc",
-        "intervalType": "month",
-        "histogramTypes": [
-            "totalDocuments",
-            "riskFactors"
-        ]
     }
-    ]
 
+    const Click = () => {store.search(
+        intervalType,
+        histogramTypes,
+        issueDateInterval,
+        searchContext,
+        similarMode,
+        limit,
+        sortType,
+        sortDirectionType,
+        attributeFilters,
+        )}
     if (!store.isAuth) {
         return (
             <>
@@ -100,18 +97,6 @@ function Search() {
                         <h1>НАЙДИТЕ НЕОБХОДИМЫЕ ДАННЫЕ В ПАРУ КЛИКОВ</h1>
                         <p>Задайте параметры поиска.</p>
                         <p>Чем больше заполните, тем точнее поиск </p>
-                        {`${maxFullness}`}
-                        {`${onlyMainRole}`}
-                        {`${onlyWithRiskFactors}`}
-                        {`${excludeTechNews}`}
-                        {`${excludeAnnouncements}`}
-                        {`${excludeDigests}`}
-                        {`${inBusinessNews}`}
-                        {`${dateStart}`}
-                        {`${dateEnd}`}
-                        {`${inn}`}
-                        {`${tonality}`}
-                        {`${limit}`}
                     </div>
                     <div className="Search-block">
                         <div className="Search-block1">
@@ -150,7 +135,7 @@ function Search() {
                                 />
                                 <div className="SearchButton">
                                     <button
-                                        onClick={() => store.search(test)}
+                                        onClick={Click}
                                     >Поиск</button>
                                     <p>*Обязательные к заполнению поля</p>
                                 </div>

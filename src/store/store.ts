@@ -70,9 +70,29 @@ export default class Store {
             console.error(error);
         }
     }
-    async search(test : {}) {
+    async search(
+        intervalType,
+        histogramTypes,
+        issueDateInterval,
+        searchContext,
+        similarMode,
+        limit,
+        sortType,
+        sortDirectionType,
+        attributeFilters,
+        ) {
         try {
-            const response = await SearchService.search(test);
+            const response = await SearchService.search(
+                intervalType,
+                histogramTypes,
+                issueDateInterval,
+                searchContext,
+                similarMode,
+                limit,
+                sortType,
+                sortDirectionType,
+                attributeFilters,
+                );
             console.log(response.data)
         } catch (error) {
             console.error(error.response?.data?.message);
