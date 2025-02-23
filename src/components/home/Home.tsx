@@ -18,9 +18,9 @@ function Home() {
         <>
             <div className='Home'>
                 <div className='Home-text1'>
-                    <h1>
+                    <p>
                         СЕРВИС ПО ПОИСКУ ПУБЛИКАЦИЙ О КОМПАНИИ ПО ЕГО ИНН
-                    </h1>
+                    </p>
                 </div>
                 <div className='Home-text2'>
                     <p>
@@ -37,12 +37,12 @@ function Home() {
             </div>
 
             <div className='SlickSlider'>
-                <h1>ПОЧЕМУ ИМЕННО МЫ</h1>
+                <p className='Home-text3'>ПОЧЕМУ ИМЕННО МЫ</p>
                 <SlickSlider/>
             </div>
 
             <div className='Rates'>
-                <h1>НАШИ ТАРИФЫ</h1>
+                <p className='Home-text3'>НАШИ ТАРИФЫ</p>
                 <div className='Rate-item'>
                     <Rate1/>
                     <Rate2/>

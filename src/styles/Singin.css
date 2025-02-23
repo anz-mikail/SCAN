@@ -15,7 +15,6 @@
     font-family: inter, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     margin: 5%;
     padding: 2px 10px;
     width: 429px;
@@ -31,26 +30,29 @@
 .SingIn .choice {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    width: 100%;
-    margin-top: 20px;
-    row-gap: 1rem;
+    width: 379px;
     gap: 1rem;
+    padding: 20px;
 }
 .ChoiceLink {
     text-align: center;
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 30px;
-    padding-top: 10px;
+    padding: 10px 0;
     text-decoration: none;
     color:var(--grey)
 }
-
-.ChoiceLink:focus{
-    color: var(--footer);
+.ChoiceLink:hover {
+    color:var(--black);
     span{
-        background-color: #029491;
+        background-color:var(--black);
+    }
+}
+.ChoiceLink:focus{
+    color: var(--blue);
+    span{
+        background-color: var(--blue);
     }
 }
 
@@ -63,56 +65,89 @@
     margin-top: 20px;
 }
 
-.SingIn p {
+.SingIn .text {
+    padding: 0;
     align-self: flex-start;
     color: var(--grey);
-    font-size: 1rem;
+    font-size: 16px;
+}
+.ErrorDiv{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+.textError {
+    display: none;
+    color: rgba(205, 93, 93, 0.88);
+    margin-top: 10px;
+    padding: 0;
+}
+.textError.active{
+    display: block;
 }
 
-.input {
+.login {
     height: 43px;
-    width: 98%;
+    width: 379px;
     align-self: center;
     border-radius: 5px;
     border: 2px solid var(--grey);
-    font-size: 1.5rem;
+    font-size: 18px;
+}
+.password{
+    height: 43px;
+    width: 379px;
+    align-self: center;
+    border-radius: 5px;
+    border: 2px solid var(--grey);
+    font-size: 18px;
+}
+.password.active{
+    border-color: rgba(205, 93, 93, 0.88);
+    box-shadow:
+            5px 5px 5px rgba(255, 0, 0, 0.1),
+            -5px -5px 5px rgba(255, 0, 0, 0.1),
+            5px -5px 5px rgba(255, 0, 0, 0.1),
+            -5px 5px 5px rgba(255, 0, 0, 0.1);
 }
 
 .SingIn-btn {
     height: 59px;
-    width: 100%;
+    width: 379px;
     align-self: center;
     margin-top: 10px;
     border-radius: 5px;
     background-color: var(--btn);
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 22px;
     border: none;
     pointer-events: none;
+}
+.SingIn-btn:hover {
+    color: var(--grey);
+    border: 2px solid var(--grey);
 }
 .SingIn-btn.active{
     background-color: var(--btn_1);
     cursor: pointer;
     pointer-events: bounding-box;
 }
-
-
+.SingIn-btn:active{
+    background-color: var(--btn);
+}
 .SingIn a {
     align-self: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
-
-.SingIn .network {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.networkButton{
+    display: flex;
+    justify-content: flex-start;
     gap: 10px;
-    width: 100%;
+    margin: 10px 20px;
 }
-
-.SingIn .network button {
+.networkButton button{
     height: 31px;
-    margin-bottom: 20px;
-    justify-items: stretch;
+    width: 96px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -131,14 +166,30 @@
         transition-duration: 500ms;
         transition-timing-function: ease-in-out;
     }
+    .SingIn .choice {
+        width: 305px;
+    }
     .SingIn-text {
         width: 383px;
     }
     .SingIn-text h1{
         font-size: 22px;
     }
+    .SingIn .text{
+        padding: 0;
+        margin: 10px;
+    }
     .SingIn {
         width: 335px;
         height: 504px;
+    }
+    .login, .password, .SingIn-btn  {
+        width: 305px;
+    }
+    .network {
+        margin: 10px;
+    }
+    .networkButton {
+        margin: 10px;
     }
 }

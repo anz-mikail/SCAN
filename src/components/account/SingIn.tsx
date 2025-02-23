@@ -4,22 +4,25 @@ import {Link} from "react-router-dom";
 
 import "../../styles/Singin.css"
 import {Context} from "../../index";
+import Home from "../home/Home";
+import google from '../../images/Group 1171274227.svg';
+import facebook from '../../images/Vector.svg';
+import yandex from '../../images/Group 1171274228.svg';
 
 
 const SingIn: FC = () => {
 
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
+
     const {store} = useContext(Context);
 
-    // if (!store.isAuth){
-    //     return (
-    //         <div className="SingIn-text">
-    //             <h1>Вы авторизованы</h1>
-    //         <div/>
-    //     )
-    // }
-    // else {
+    if (store.isAuth) {
+                return (
+                    <>
+                        <Home/>
+                    </>
+                );} else {
         return (
             <div className='SingIn-Body'>
                 <div className="SingIn-text">
@@ -36,38 +39,48 @@ const SingIn: FC = () => {
                             >Зарегистрироваться <span></span></Link>
                         </div>
                     </div>
-
-                    <p>Логин или номер телефона:</p>
-
-                    <input className="input"
+                    <p className='text'>Логин или номер телефона:</p>
+                    <input className="login"
                            type="text"
                            onChange={e => setLogin(e.target.value)}
                            value={login}/>
+                    {/*<p>Ведите корректные данные</p>*/}
+                    <p className='text'>Пароль:</p>
 
-                    <p>Пароль:</p>
-
-                    <input className="input"
+                    <input className={!store.isError ? 'password' : 'password active'}
                            type="password"
                            onChange={e => setPassword(e.target.value)}
                            value={password}/>
 
-                    <button className={password && login? 'SingIn-btn active' : 'SingIn-btn'}
-                            onClick={() => store.login(login, password)}
-                    >Войти</button>
+                    <div className="ErrorDiv">
+                        <p className={!store.isError ? 'textError' : 'textError active'}>
+                            Неправильный пароль</p>
+                    </div>
+
+                    <button className={password && login ? 'SingIn-btn active' : 'SingIn-btn'}
+                            onClick={() => store.login(login, password)}>
+                        Войти
+                    </button>
 
                     <a href="#">Восстановить пароль</a>
-                    <p>Войти через:</p>
+
                     <div className='network'>
-                        <button></button>
-                        <button></button>
-                        <button></button>
+                        <p className='text'>Войти через:</p>
+                        <div className='networkButton'>
+                            <button><img src={google}/></button>
+                            <button><img src={facebook}/></button>
+                            <button><img src={yandex}/></button>
+                        </div>
                     </div>
+
                 </div>
             </div>
-
         )
     }
-// }
+}
+
+
+
 
 
 export default observer(SingIn);

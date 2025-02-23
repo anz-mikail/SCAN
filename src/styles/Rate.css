@@ -1,4 +1,4 @@
-.rate{
+.rate1{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,14 +6,49 @@
     width: 415px;
     height: 540px;
     border-radius: 10px;
-    /*border: var(--gold) solid 3px;*/
     box-shadow:
             20px 20px 20px var(--grey_border),
             -20px -20px 20px var(--grey_border),
             20px -20px 20px var(--grey_border),
             -20px 20px 20px var(--grey_border);
 }
-
+.rate1.active{
+    border: var(--gold) solid 3px;
+}
+.rate2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: inter, Helvetica, sans-serif;
+    width: 415px;
+    height: 540px;
+    border-radius: 10px;
+    box-shadow:
+            20px 20px 20px var(--grey_border),
+            -20px -20px 20px var(--grey_border),
+            20px -20px 20px var(--grey_border),
+            -20px 20px 20px var(--grey_border);
+}
+.rate2.active{
+    border: var(--blue) solid 3px;
+}
+.rate3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: inter, Helvetica, sans-serif;
+    width: 415px;
+    height: 540px;
+    border-radius: 10px;
+    box-shadow:
+            20px 20px 20px var(--grey_border),
+            -20px -20px 20px var(--grey_border),
+            20px -20px 20px var(--grey_border),
+            -20px 20px 20px var(--grey_border);
+}
+.rate3.active{
+    border: var(--black) solid 3px;
+}
 
 .rateHeader1 {
     display: flex;
@@ -44,66 +79,72 @@
     border-top-left-radius: 10px;
 }
 
-
-
-.rate .text {
+.text {
     margin-left: 20px;
 }
-.rate .text h2{
+.text h2{
     font-size: 30px;
 }
-.rate .text p {
+.text p {
     font-size: 18px;
 }
-
-
-
-.rateHeader1  img {
+.rateImage {
     width: 92.24px;
     height: 83.15px;
     margin-right: 20px;
     margin-top: 10px;
 }
-.rateHeader2  img {
-    width: 92.24px;
-    height: 83.15px;
-    margin-right: 20px;
-    margin-top: 10px;
-}
-.rateHeader3 img {
-    width: 92.24px;
-    height: 83.15px;
-    margin-right: 20px;
-    margin-top: 10px;
-}
-
-
-
 .rateRate {
     margin:30px;
     padding: 0;
 }
-.rateRate span{
+
+.СurrentRate{
+    position: relative;
+    left: 240px;
+    bottom: 20px;
+    width: 134px;
+    height: 24px;
+    background-color: #3BA5E0;
+    color: var(--white);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+.СurrentRate.active{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.rateRate span :nth-child(1) {
+.ratePrice{
+    display: flex;
+
+}
+.ratePrice :nth-child(1) {
     margin: 0;
     padding: 0;
     font-size: 35px;
 }
 
-.rateRate span :nth-child(2) {
+.ratePrice :nth-child(2) {
     text-decoration: line-through;
     margin: 0 30px;
     padding: 0;
     color: var(--grey);
     font-size: 35px;
 }
-.rateRate :nth-child(2)  {
+.СurrentRate1{
+    width: 100%;
+    height: 25px;
+}
+.rateRate :nth-child(3) :nth-child(1) {
     margin: 10px 0;
     padding: 0;
     font-size: 18px;
+    width: 100%;
+    height: 18px;
 }
 
 .rateText {
@@ -121,7 +162,7 @@
     padding: 0;
 }
 
-.rate button {
+.ratebutton11 {
     height: 59px;
     width: 355px;
     margin: 30px;
@@ -130,4 +171,66 @@
     border-radius: 5px;
     border: none;
     font-size: 20px;
+}
+.ratebutton22 {
+    height: 59px;
+    width: 355px;
+    margin: 30px;
+    background-color: var(--grey_border);
+    color: var(--black);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}
+.ratebutton2 {
+    display:none;
+}
+.ratebutton1 {
+    display:block;
+}
+@media  (max-width: 700px) {
+    .rate1, .rate2, .rate3 {
+        width: 335px;
+        height: 512px;
+    }
+    .text h2{
+        font-size: 20px;
+    }
+    .text p {
+        font-size: 15px;
+    }
+    .rateImage {
+        width: 59px;
+        height: 53.18px;
+    }
+    .ratePrice :nth-child(1) {
+        font-size: 30px;
+    }
+    .ratePrice :nth-child(2) {
+        font-size: 30px;
+    }
+    .rateRate :nth-child(3) :nth-child(1)  {
+        font-size: 16px;
+    }
+    .rateText p {
+        font-size: 16px;
+    }
+    .СurrentRate{
+        position: relative;
+        left: 170px;
+        bottom: 25px;
+        font-size: 14px;
+        width: 120px;
+        height: 24px;
+    }
+    .ratebutton11 {
+        height: 59px;
+        width: 286.57px;
+        font-size: 18px;
+    }
+    .ratebutton22 {
+        height: 59px;
+        width: 286.57px;
+        font-size: 18px;
+    }
 }

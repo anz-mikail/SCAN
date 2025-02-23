@@ -1,5 +1,6 @@
 import {makeAutoObservable} from "mobx";
 import AuthService from "../services/AuthService";
+import SearchService from "../services/SearchService";
 import axios from "axios";
 import {AuthResponse} from "../models/Responses";
 import {API_URL} from "../http";
@@ -8,7 +9,7 @@ import {API_URL} from "../http";
 export default class Store {
     isAuth = false;
     isLoading = false;
-    forInfo =false
+    isError = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -19,8 +20,8 @@ export default class Store {
     setLoading(bool: boolean) {
         this.isLoading = bool;
     }
-    setForInfo(bool: boolean) {
-        this.forInfo = bool;
+    setIsError(bool: boolean) {
+        this.isError = bool;
     }
 
     async login(login: string, password: string) {
@@ -28,14 +29,27 @@ export default class Store {
             const response = await AuthService.login(login, password);
             localStorage.setItem("token", response.data.accessToken);
             localStorage.setItem("expire", response.data.expire);
+            localStorage.setItem("login", login);
+            localStorage.setItem("password", password);
+            localStorage.setItem("rate", "PRO");
             this.setAuth(true);
-            this.setForInfo(true)
+            this.setIsError(false);
             console.log(response.data)
+        } catch (error) {
+            this.setIsError(true);
+            console.error(error.response?.data?.message);
+        }
+    }
+    async refresh(refreshLogin: string, refreshPassword: string) {
+        try {
+            const response = await AuthService.login(refreshLogin, refreshPassword);
+            localStorage.setItem("token", response.data.accessToken);
+            localStorage.setItem("expire", response.data.expire);
+            this.setAuth(true);
         } catch (error) {
             console.error(error.response?.data?.message);
         }
     }
-
     async info() {
         try {
             this.setLoading(true);
@@ -43,19 +57,25 @@ export default class Store {
             localStorage.setItem("usedCompanyCount", response.data.eventFiltersInfo.usedCompanyCount);
             localStorage.setItem("companyLimit", response.data.eventFiltersInfo.companyLimit);
             console.log(response)
-            this.setForInfo(false)
             this.setLoading(false);
         } catch (error) {
             console.error(error.response?.data?.message);
         }
     }
-
     async logout() {
         try{
-            localStorage.clear();
             this.setAuth(false);
+            localStorage.clear();
         } catch (error) {
             console.error(error);
+        }
+    }
+    async search(test : {}) {
+        try {
+            const response = await SearchService.search(test);
+            console.log(response.data)
+        } catch (error) {
+            console.error(error.response?.data?.message);
         }
     }
 

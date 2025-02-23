@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {observer} from "mobx-react-lite";
 
 import "../../styles/Rate.css";
 
@@ -7,23 +8,32 @@ import Check from "../../images/Check.png";
 
 
 function Rate1() {
+    const checkValue = localStorage.getItem('rate')
+    const Value = 'Beginner'
     return (
         <>
-            <div className="rate">
+            <div className={!(checkValue === Value) ? "rate1" : "rate1 active"}>
                 <div className="rateHeader1">
                     <div className="text">
                         <h2>Beginner</h2>
                         <p>Для небольшого исследования</p>
                     </div>
-                    <img src={Rate_1} alt=" "/>
+                    <img className="rateImage" src={Rate_1} alt=" "/>
                 </div>
 
                 <div className="rateRate">
-                    <span>
+                    <div className="СurrentRate1">
+                        <div className={!(checkValue === Value) ? "СurrentRate" : "СurrentRate active"}>
+                            Текущий тариф
+                        </div>
+                    </div>
+                    <span className={!(checkValue === Value) ? "ratePrice" : "ratePrice active"}>
                         <p>799 ₽</p>
                         <p>1200 ₽</p>
                     </span>
-                    <p>или 150 ₽/мес. при рассрочке на 24 мес.</p>
+                    <span>
+                        <p>или 150 ₽/мес. при рассрочке на 24 мес.</p>
+                    </span>
                 </div>
 
                 <div className='rateText'>
@@ -36,13 +46,17 @@ function Rate1() {
                         Поддержка 24/7</p>
                 </div>
 
-                <button>
-                    Подробнее
-                </button>
+                <div className={!(checkValue === Value) ? "ratebutton1" : "ratebutton2"}>
+                    <button className="ratebutton11">Подробнее</button>
+                </div>
+
+                <div className={!(checkValue === Value) ? "ratebutton2" : "ratebutton1"}>
+                    <button className="ratebutton22">Перейти в личный кабинет</button>
+                </div>
             </div>
         </>
     )
 }
 
 
-export default Rate1;
+export default observer(Rate1);

@@ -1,0 +1,53 @@
+.SelectINN{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.SelectBlock1{
+    width: 265px;
+    height: 43px;
+    border-radius: 7px;
+    border: 2px solid var(--grey_border);
+    padding:  10px;
+    font-size: 18px;
+}
+.LimitInput{
+    width: 242px;
+    height: 43px;
+    border-radius: 7px;
+    border: 2px solid var(--grey_border);
+    padding:  0 10px;
+    font-size: 18px;
+}
+.LimitInput.active{
+    border: 2px solid red;
+    outline:none
+}
+.SelectINN span{
+    height: 20px;
+    width: 100%;
+}
+.LimitText {
+    display: none;
+    font-size: 10px;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+.LimitText.active {
+    display: block;
+}
+
+@media  (max-width: 700px) {
+    .LimitInput {
+        width: 310px;
+        height: 43px;
+    }
+    .SelectBlock1 {
+        width: 335px;
+        height: 43px;
+    }
+    .LimitText.active {
+        margin-top: 10px;
+    }
+}

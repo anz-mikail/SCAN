@@ -57,6 +57,7 @@
 .nav-2 {
     display: flex;
     justify-content: flex-end;
+    margin-right: 20px;
 }
 .nav-2.active {
     display: none;
@@ -68,6 +69,7 @@
 .nav-3.active{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-right: 20px;
 
 }
@@ -77,8 +79,11 @@
     color: var(--black);
     padding: 5px 25px;
 }
-.link-1 {
+.link:hover {
     color: var(--grey);
+}
+.link-1 {
+    color: var(--black);
     padding: 5px 25px;
     text-decoration: none;
 }
@@ -88,10 +93,16 @@
     border-radius: 5px;
     color: var(--black);
 }
+.link-1:hover {
+    color: var(--grey);
+}
 
 .link-2 {
     color: var(--blue);
     margin: 5px 0;
+}
+.link-3:hover {
+    color: var(--grey);
 }
 
 .link-3 {
@@ -106,7 +117,7 @@
 .link-4 {
     cursor: pointer;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 900px){
     .navbar {
         display: flex;
         flex-direction: column;

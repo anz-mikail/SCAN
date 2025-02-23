@@ -12,9 +12,7 @@ const Info_2: FC = () => {
 
     return (
         <div className='info-2'>
-            <p> isAuth: {`${store.isAuth}`}</p>
-            <p> isLoading: {`${store.isLoading}`}</p>
-            <p> forInfo: {`${store.forInfo}`}</p>
+            <p> {localStorage.getItem('login')}</p>
             <p className='link-4' onClick={() => store?.logout()}>Выйти</p>
         </div>
     )

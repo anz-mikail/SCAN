@@ -7,7 +7,8 @@
 }
 .Home-text1 {
     font-family: FERRY, Helvetica, sans-serif;
-    max-width: 420px;
+    max-width: 723px;
+    font-size: 60px;
 }
 .Home-text2 {
     font-family: inter, Helvetica, sans-serif;
@@ -25,27 +26,34 @@
     font-size: 22px;
     padding: 15px 80px;
     text-decoration: none;
-    pointer-events: none
+    cursor: pointer;
+    pointer-events: bounding-box;
+}
+.Home-btn .link:hover {
+    color: var(--grey);
+    border: 2px solid var(--grey);
+}
+.Home-btn .link:active {
+    background-color: var(--btn);
 }
 .Home-btn .link.active {
-    pointer-events: bounding-box;
+    display: none
 }
 
 
 .SlickSlider {
     padding-top: 100px;
 }
-.SlickSlider h1{
+.Home-text3{
     font-family: FERRY, Helvetica, sans-serif;
+    font-size: 45px;
     padding:0;
 }
-
 .Rates {
     padding-top: 100px;
 }
-.Rates h1 {
-    font-family: FERRY, Helvetica, sans-serif;
-    padding: 0 20px;
+.Rates p{
+    margin-left: 35px;
 }
 .Rate-item {
     display: grid;
@@ -56,12 +64,25 @@
 }
 
 
-/*@media  (max-width: 550px) {*/
-/*    .Home-btn {*/
-/*        !*padding: 20px 60px;*!*/
-/*    }*/
-/*    .Home-btn .link {*/
-/*        !*font-size: 22px;*!*/
-/*        !*padding: 15px 80px;*!*/
-/*    }*/
-/*}*/
+@media  (max-width: 700px) {
+    .Home {
+        align-items: center;
+    }
+    .Home-text1 {
+        max-width: 361px;
+        font-size: 28px;
+    }
+    .Home-text2 {
+        font-family: inter, Helvetica, sans-serif;
+        max-width: 361px;
+        font-size: 18px;
+    }
+    .Home-text3{
+        font-size: 28px;
+    }
+    .Home-btn .link {
+        font-size: 20px;
+        padding: 15px 80px;
+    }
+
+}

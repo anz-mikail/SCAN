@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect }  from "react";
 import {Link} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 
@@ -14,6 +14,14 @@ import Info_2 from "./Info-2";
 
 function Header({change_btn, menuActive}) {
     const {store} = useContext(Context);
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            let refreshLogin = localStorage.getItem('login')
+            let refreshPassword = localStorage.getItem('password')
+            store.refresh(refreshLogin, refreshPassword)
+        }
+    }, [])
     return (
         <nav className={menuActive ? 'navbar' : 'navbar active'}>
             <div className={menuActive ? 'log' : 'log active'}>
@@ -37,13 +45,13 @@ function Header({change_btn, menuActive}) {
                 <Link className='link' to="#">FAQ</Link>
             </ul>
 
-            <ul className={!store.isAuth ? 'nav-2 ' : 'nav-2 active'}>
+            <ul className={!store.isAuth ? 'nav-2' : 'nav-2 active'}>
                 <Link className='link-1' to="#">Зарегистрироваться</Link>
                 <p className='link-2'>|</p>
                 <Link className='link-3' to="/singIn">Войти</Link>
             </ul>
-            <ul className={!store.isAuth ? 'nav-3 active' : 'nav-3 active'}>
-                <Info_1/>
+            <ul className={!store.isAuth ? 'nav-3' : 'nav-3 active'}>
+                <Info_1 menuActive={menuActive}/>
                 <Info_2/>
             </ul>
         </nav>

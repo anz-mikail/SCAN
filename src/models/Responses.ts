@@ -10,3 +10,25 @@ export interface infoResponse {
         companyLimit: any;
     }
 }
+
+export interface SearchResponse {
+    "data": [{
+        "data": [{
+            "date": any;
+            "value": any;
+        }, {
+            "date": any;
+            "value": any;
+        }],
+        "histogramType": any;
+    }, {
+        "data": [{
+            "date": any;
+            "value": any;
+        }, {
+            "date": any;
+            "value": any;
+        }],
+        "histogramType": any;
+    }]
+}

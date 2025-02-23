@@ -6,29 +6,46 @@ import "../../styles/Info.css"
 
 
 
-const Info_1: FC = () => {
+function Info_1 ({menuActive}) {
 
     const {store} = useContext(Context);
 
     useEffect(() => {
-        if (localStorage.getItem('token')) {
+        if (!store.isAuth) {
             store.info()
         }
     }, [])
 
     if (store.isLoading) {
             return (
-                <div className='info-1'>
-                    <p>Загрузка</p>
+                <div className={menuActive? 'infoLoading': 'infoLoading active'}>
+                    <div className="main_body">
+                        <div className="element">
+                            <div className="loading2">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )
-    }
-    else {
+    } else {
         return (
-            <div className='info-1'>
-                <p>{store.isLoading ? 'Загрузка' : ''}</p>
-                <p>Использовано компаний {localStorage.getItem('usedCompanyCount')}</p>
-                <p>Лимит по компаниям {localStorage.getItem('companyLimit')}</p>
+            <div className={menuActive? 'info-1': 'info-1 active'}>
+                <div>
+                    <p>Использовано компаний</p>
+                    <p>{localStorage.getItem('usedCompanyCount')}</p>
+                </div>
+                <div>
+                    <p>Лимит по компаниям</p>
+                    <p>{localStorage.getItem('companyLimit')}</p>
+                </div>
             </div>
         )
     }

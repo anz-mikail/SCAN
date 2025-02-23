@@ -14,7 +14,6 @@
     padding: 0;
     margin: 0;
 }
-
 .Search-block{
     font-family: inter, Helvetica, sans-serif;
     font-size: 18px;
@@ -32,73 +31,23 @@
             20px -20px 20px var(--grey_border),
             -20px 20px 20px var(--grey_border);
 }
-
 .Search-block1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.Search-block1 div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.Search-block1 div input{
-    width: 242px;
-    height: 43px;
-    border-radius: 7px;
-    border: 2px solid var(--grey_border);
-    padding:  0 10px;
-    font-size: 18px;
-}
-.selectBlock1{
-    width: 265px;
-    height: 43px;
-    border-radius: 7px;
-    border: 2px solid var(--grey_border);
-    padding:  0 10px;
-    font-size: 18px;
-}
-
-.Search-block1 form{
-    display: flex;
-    flex-direction: column;
-}
-.Search-block1 form input{
-    margin-top: 30px;
-}
-
-
-.label {
-    color: var(--grey);
-}
-.checkbox {
-    width: 20px;
-    height: 20px;
-    accent-color: #04aa6a;
-    /*outline: black solid 1px;*/
-}
-.checkbox[type="checkbox"]:checked+span{
-    color: var(--black);
-}
-
 .Search-block2 {
     margin-top: 10px
 }
 .Search-block2-1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    color: var(--grey);
 }
-.selectBlock2 {
-    width: 176px;
-    height: 43px;
-    border-radius: 7px;
-    border: 2px solid var(--grey_border);
-    padding:  0 10px;
-    font-size: 18px;
-    margin-right: 20px;
+.SearchButton {
+    text-align: end;
+    margin-right: 30px;
 }
-.Search-block2-1 button{
+.SearchButton button{
     width: 305px;
     height: 59px;
     border-radius: 7px;
@@ -107,20 +56,17 @@
     font-size: 22px;
     color: var(--white);
 }
-.Search-block2-1 p{
+.SearchButton button:hover {
     color: var(--grey);
+    border: 2px solid var(--grey);
 }
-
-.Search-block2-2 {
-    text-align: end;
-    margin-right: 20px;
+.SearchButton button:active {
+    background-color: var(--btn);
 }
-
 @media  (max-width: 700px) {
     .Search {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
     .Search-title {
         padding: 20px;
@@ -143,36 +89,19 @@
         width: 375px;
         height: 688px;
     }
-    .Search-block1 form{
-      display: none;
-    }
     .Search-block1 {
         padding-left: 15px
-    }
-    .Search-block1 div input{
-        width: 310px;
-        height: 43px;
-    }
-    .selectBlock1{
-        width: 335px;
-        height: 43px;
-    }
-    .selectBlock2 {
-        width: 335px;
-        height: 43px;
-        margin: 15px 0;
     }
     .Search-block2 {
         padding: 0 15px;
     }
     .Search-block2-1 {
         text-align: start;
-
     }
-    .Search-block2-2 p {
-        text-align: start;
+    .SearchButton p {
+        text-align: left;
     }
-    .Search-block2-1 button{
+    .SearchButton button{
         width: 335px;
         height: 59px;
     }
