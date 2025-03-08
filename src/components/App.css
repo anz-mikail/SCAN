@@ -1,0 +1,44 @@
+
+@font-face {
+    src: url('../styles/fonts/ferry_black.otf');
+    font-family: "ferry";
+}
+
+@font-face {
+    src: url('../styles/fonts/Inter_24pt-Medium.ttf');
+    font-family: "inter";
+}
+:root {
+    --footer: #029491;
+    --blue: #7ce3e1;
+    --black: #000000;
+    --white: #ffffff;
+    --btn_1: #5970ff;
+    --btn: rgba(89, 112, 255, 0.51);
+    --gold: #ffb64f;
+    --grey: #949494;
+    --grey_border: #c7c7c7;
+}
+.body {
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .body {
+        transform: translateY(-20px);
+        transition: translate;
+        transition-property: transform;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+        width: 100%;
+    }
+
+    .body.active {
+        transform: translateY(310px);
+        transition: translate;
+        transition-property: transform;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+    }
+}
+

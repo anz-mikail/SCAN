@@ -1,0 +1,125 @@
+.ResultSlider {
+    height: 158px;
+}
+
+.ResultItem {
+    font-family: inter, Helvetica, sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 158px;
+    user-select: none;
+    margin:0;
+    padding: 0;
+    gap: 25px;
+}
+.ResultItem p {
+    margin: 0;
+    padding: 0;
+}
+.ResultItemSpan{
+    width: 2px;
+    height: 124px;
+    background-color: var(--grey_border);
+    transform: translateY(-140px);
+    justify-self: end;
+}
+.NextArrow {
+    position: absolute;
+    left: 1145px;
+    bottom: 188px;
+    font-size: 39px;
+    color: var(--grey_border);
+    cursor: pointer;
+}
+.PrevArrow{
+    position: absolute;
+    left: -188px;
+    bottom: 188px;
+    font-size: 39px;
+    color: var(--grey_border);
+    cursor: pointer;
+}
+.PrevArrow:hover, .NextArrow:hover {
+    color: var(--black)
+}
+.PrevArrow:active, .NextArrow:active {
+    color: var(--grey);
+}
+.icon-conteiner{
+    font-family: inter, Helvetica, sans-serif;
+    color: var(--grey);
+    height: 100%;
+    text-align: center;
+    align-content: center;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.result-loading-icon {
+    width: 60px;
+    height: 60px;
+    opacity: 0.6;
+    animation: spin 2s linear infinite;
+}
+
+@media screen and (max-width: 1400px) {
+    .NextArrow {
+        left: 1000px;
+    }
+}
+@media screen and (max-width: 1250px) {
+    .NextArrow {
+        left: 860px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .NextArrow {
+        left: 720px;
+    }
+}
+@media screen and (max-width: 950px) {
+    .NextArrow {
+        left: 580px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .NextArrow {
+        left: 440px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .NextArrow {
+        left:300px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .icon-conteiner2 {
+        display: none;
+    }
+    .result-loading-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .ResultItem{
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        justify-items: center;
+        height: 65px;
+        font-size: 16px;
+    }
+    .ResultItemSpan{
+        display: none;
+    }
+    .NextArrow {
+        left: 300px;
+        bottom: 20px;
+    }
+    .PrevArrow{
+        left: -40px;
+        bottom: 20px;
+    }
+}

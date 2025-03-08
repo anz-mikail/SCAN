@@ -1,0 +1,174 @@
+.Document-Container {
+    font-family: inter, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(641px, 1fr));
+    justify-items: center;
+    margin-bottom: 40px;
+}
+.Document-Container1{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    margin-top: 40px;
+    width: 641px;
+    height: 694px;
+    border-radius: 10px;
+    box-shadow:
+            20px 20px 20px var(--grey_border),
+            -20px -20px 20px var(--grey_border),
+            20px -20px 20px var(--grey_border),
+            -20px 20px 20px var(--grey_border);
+}
+.Document-ContainerDate{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding:0;
+    gap: 20px;
+    color: var(--grey);
+    font-size: 16px;
+    text-decoration: none;
+    width: 581px;
+}
+.Document-ContainerDate a{
+    color: var(--grey);
+    overflow: hidden
+}
+.Document-ContainerDate a:hover{
+    color: var(--black);
+}
+.Document-ContainerTitle {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 581px;
+}
+.Document-ContainerTitle h1{
+    font-size: 26px;
+}
+
+.Document-ContainerImage {
+    margin: 20px 0;
+    padding: 0;
+    width: 581px;
+    height: 158px;
+    text-align: center;
+
+}
+.Document-ContainerImage img {
+    width: 100%;
+    height: 100%;
+}
+.Document-ContainerCategory {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 581px;
+    justify-content: flex-start;
+}
+.TechNews, .Announcement, .Digest {
+    background-color: #FFB64F;
+    font-size: 12px;
+    border-radius: 5px;
+    width: 157px;
+    height: 22px;
+    align-content: center;
+    text-align: center;
+    line-height: 14.52px;
+}
+.TechNews.active, .Announcement.active, .Digest.active{
+    display: none;
+}
+
+.Document-ContainerText {
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    height: 260px;
+    width: 581px;
+    overflow: hidden
+}
+
+.Document-ContainerBtn {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    width: 581px;;
+}
+.Document-ContainerLink {
+    font-family: inter, Helvetica, sans-serif;
+    border-radius: 5px;
+    background-color: var(--blue);
+    font-size: 16px;
+    color: var(--black);
+    padding: 15px 60px;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: bounding-box;
+}
+.Document-ContainerLink:hover {
+    color: var(--grey);
+    border: 2px solid var(--grey);
+}
+.Document-ContainerLink:active {
+    background-color: var(--btn);
+}
+.Document-ContainerBtn p{
+    color: var(--grey);
+}
+
+
+@media (max-width: 650px){
+    .Document-Container {
+        justify-content: center;
+    }
+    .Document-Container1{
+        height: 695px;
+        width: 335px;
+    }
+    .Document-ContainerDate{
+        width: 290px;
+        gap: 10px;
+    }
+    .Document-ContainerDate a{
+         font-size: 14px;
+     }
+    .Document-ContainerDate p{
+        font-size: 14px;
+        width: 100px;
+    }
+    .Document-ContainerTitle {
+        width: 295px;
+    }
+    .Document-ContainerTitle h1{
+        font-size: 19px;
+    }
+    .Document-ContainerCategory {
+        width: 297px;
+    }
+    .Document-ContainerImage {
+        width: 297px;
+    }
+    .TechNews, .Announcement, .Digest {
+        font-size: 10px;
+    }
+    .Document-ContainerText {
+        width: 290px;
+        height: 320px;
+        font-size: 12px;
+    }
+    .Document-ContainerBtn {
+        width: 290px;
+    }
+    .Document-ContainerLink {
+        font-size: 14px;
+        padding: 15px 40px;
+    }
+    .Document-ContainerBtn p{
+        color: var(--grey);
+        font-size: 14px;
+    }
+}

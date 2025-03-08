@@ -1,0 +1,188 @@
+
+    .navbar {
+        display: grid;
+        grid-template-columns:auto auto auto;
+        align-items: center;
+        position: fixed;
+        font-family: inter, Helvetica, sans-serif;
+        margin: 0 20px;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        background-color: var(--white);
+    }
+    .log-1 {
+        display: none;
+    }
+    .burger-btn {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 10%;
+        background-color: var(--white);
+    }
+    .burger-btn span {
+        position: absolute;
+        width: 25px;
+        height: 4px;
+        background-color: var(--footer);
+        left: 8px;
+        cursor: pointer;
+    }
+    .burger-btn span:nth-child(1) {
+        transform: translateY(-10px);
+    }
+    .burger-btn span:nth-child(2) {
+        transform: translateY(10px);
+    }
+    .burger-btn2 {
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        width: 40px;
+        display: none;
+        border: none;
+        background-color: var(--footer);
+        color: var(--white);
+        font-size: 40px;
+        cursor: pointer;
+    }
+    .nav-1 {
+        text-align: center;
+    }
+    .nav-2 {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 30px;
+    }
+    .nav-2.active {
+        display: none;
+    }
+    .nav-3 {
+        display: none;
+    }
+    .nav-3.active {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+
+    }
+    .link {
+        text-decoration: none;
+        color: var(--black);
+        padding: 5px 25px;
+    }
+    .link:hover {
+        color: var(--grey);
+    }
+    .link-1 {
+        color: var(--black);
+        padding: 5px 25px;
+        text-decoration: none;
+    }
+    .link-1:focus {
+        background-color: var(--blue);
+        border-radius: 5px;
+        color: var(--black);
+    }
+    .link-1:hover {
+        color: var(--grey);
+    }
+    .link-2 {
+        color: var(--blue);
+        margin: 5px 0;
+    }
+    .link-3:hover {
+        color: var(--grey);
+    }
+    .link-3 {
+        color: var(--black);
+        padding: 5px 25px;
+        text-decoration: none;
+    }
+    .link-3:focus {
+        background-color: var(--blue);
+        border-radius: 5px;
+    }
+    .link-4 {
+        cursor: pointer;
+    }
+@media (max-width: 768px){
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--white);
+        padding-bottom: 100px;
+        transform: translateY(-410px);
+        transition: translate;
+        transition-property: transform;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+    }
+    .navbar.active {
+        background-color: var(--footer);
+        padding-bottom: 10px;
+        transform: translateY(-40px);
+        transition: translate;
+        transition-property: transform;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+    }
+    .log{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        transform: translateY(410px);
+    }
+    .log-2 {
+        transform: translateY(0px);
+    }
+    .log-2.active {
+        display: none;
+    }
+    .log-1.active {
+        display: block;
+    }
+
+    .log.active {
+        color: var(--white);
+        transform: translateY(5px);
+    }
+    .burger-btn {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 430px;
+    }
+    .burger-btn.active {
+        display: none;
+    }
+    .burger-btn2.active {
+        display: block;
+    }
+    .nav-1, .nav-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding:25px 0;
+    }
+    .link{
+        color: var(--white);
+        margin-top: 15px;
+    }
+    .link-1, .link-3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        width: 200px;
+    }
+    .link-2 {
+        display: none;
+    }
+}

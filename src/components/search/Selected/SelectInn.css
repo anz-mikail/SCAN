@@ -1,0 +1,94 @@
+.SelectINN{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.SelectInnTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap:2px;
+    margin:0;
+    padding: 0;
+}
+.SelectInnTitle :nth-child(1){
+    height: 30px;
+}
+.snowflake {
+    font-size: 25px;
+    height: 30px;
+    width: 13px;
+}
+.snowflake.active{
+    color: rgba(255, 0, 0, 0.70);
+}
+.error{
+    color: rgba(255, 0, 0, 0.70);
+    text-align: center;
+    width: 265px;
+    margin: 5px 0 0 0;
+    padding: 0;
+    font-size: 14px;
+    display: none;
+}
+.error.active{
+    display: block;
+}
+.SelectBlock1{
+    width: 265px;
+    height: 43px;
+    border-radius: 7px;
+    border: 2px solid var(--grey_border);
+    padding:  10px;
+    font-size: 18px;
+}
+.LimitInput{
+    width: 242px;
+    height: 43px;
+    border-radius: 7px;
+    border: 2px solid var(--grey_border);
+    padding:  0 10px;
+    font-size: 18px;
+}
+.LimitInput.active{
+    border: 2px solid rgba(255, 0, 0, 0.70);
+    box-shadow: 0px 0px 0px 5px rgba(255, 0, 0, 0.05);
+    outline:none;
+}
+.LimitInput.active::placeholder{
+    color:rgba(255, 0, 0, 0.70);
+}
+.SelectINN span{
+    height: 20px;
+    width: 100%;
+}
+.LimitText {
+    display: none;
+    font-size: 14px;
+    color: rgba(255, 0, 0, 0.70);
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+    width: 265px;
+}
+.LimitText.active {
+    display: block;
+}
+
+@media  (max-width: 700px) {
+    .LimitInput {
+        width: 310px;
+        height: 43px;
+    }
+    .error {
+        width: 335px;
+    }
+    .SelectBlock1 {
+        width: 335px;
+        height: 43px;
+    }
+    .LimitText.active {
+        width: 335px;
+        margin-top: 10px;
+    }
+}

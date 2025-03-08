@@ -1,0 +1,132 @@
+
+    .Home {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        justify-content: center;
+    }
+
+    .Home-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .Home-text1 {
+        font-family: FERRY, Helvetica, sans-serif;
+        max-width: 723px;
+        font-size: 60px;
+    }
+
+    .Home-text2 {
+        font-family: inter, Helvetica, sans-serif;
+        max-width: 420px;
+        font-size: 20px;
+    }
+
+    .Home-btn {
+        padding-top: 50px;
+    }
+
+    .Home-btn .link {
+        font-family: inter, Helvetica, sans-serif;
+        border-radius: 3px;
+        background-color: var(--btn_1);
+        color: var(--white);
+        font-size: 22px;
+        padding: 15px 80px;
+        text-decoration: none;
+        cursor: pointer;
+        pointer-events: bounding-box;
+    }
+
+    .Home-btn .link:hover {
+        color: var(--grey);
+        border: 2px solid var(--grey);
+    }
+
+    .Home-btn .link:active {
+        background-color: var(--btn);
+    }
+
+    .Home-btn .link.active {
+        display: none
+    }
+
+    .Home-image1 {
+        width: 593px;
+        height: 629px;
+        z-index: -100;
+        padding-top: 50px;
+    }
+
+    .Home-image2 {
+        width: 1307px;
+        height: 575.52px;
+        transform: translateY(100px);
+    }
+
+    .SlickSlider {
+        padding-top: 50px;
+    }
+
+    .Home-text3 {
+        font-family: FERRY, Helvetica, sans-serif;
+        font-size: 45px;
+        padding: 0;
+    }
+
+    .Rates {
+        padding-top: 80px;
+    }
+
+    .Rates p {
+        margin-left: 35px;
+    }
+
+    .Rate-item {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));
+        justify-items: center;
+        row-gap: 3rem;
+        padding: 40px 0;
+    }
+
+@media (max-width: 768px) {
+    .Home-text {
+        align-items: center;
+    }
+    .Home-text1 {
+        max-width: 361px;
+        font-size: 28px;
+    }
+    .Home-text2 {
+        font-family: inter, Helvetica, sans-serif;
+        max-width: 361px;
+        font-size: 18px;
+    }
+    .Home-text3{
+        font-size: 28px;
+    }
+    .Home-btn .link {
+        font-size: 20px;
+        padding: 15px 80px;
+    }
+    .SlickSlider {
+        padding-top: 0;
+    }
+    .Home{
+        gap: 30px;
+        justify-items: center;
+    }
+    .Home-image1 {
+        width: 342.21px;
+        height: 347.18px;
+    }
+    .Home-image2 {
+        width: 891.41px;
+        height: 392.52px;
+    }
+}
+

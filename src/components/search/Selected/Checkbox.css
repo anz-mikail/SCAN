@@ -1,0 +1,24 @@
+.checkboxForm{
+    display: flex;
+    flex-direction: column;
+}
+.checkboxForm input{
+    margin-top: 30px;
+}
+.checkboxLabel {
+    color: var(--grey);
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #04aa6a;
+    /*outline: black solid 1px;*/
+}
+.checkbox[type="checkbox"]:checked+span{
+    color: var(--black);
+}
+@media (max-width: 700px) {
+    .checkboxForm{
+        display: none;
+    }
+}

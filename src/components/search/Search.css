@@ -1,0 +1,208 @@
+.Search {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+}
+.Search-title{
+    margin-top: 100px;
+    width: 800px;
+    padding: 20px
+}
+.Search-title h1{
+    font-family: FERRY, Helvetica, sans-serif;
+    font-size: 40px;
+}
+.Search-title p{
+    font-family: inter, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 400px;
+    padding: 0;
+    margin: 0;
+}
+.Search-block{
+    font-family: inter, Helvetica, sans-serif;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5fr 1fr;
+    width: 872px;
+    height: 543px;
+    margin:20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:
+            20px 20px 20px var(--grey_border),
+            -20px -20px 20px var(--grey_border),
+            20px -20px 20px var(--grey_border),
+            -20px 20px 20px var(--grey_border);
+}
+.Search-block1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.Search-block2 {
+    margin: 0;
+}
+.Search-block2-0{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+    gap:2px;
+    margin:15px 0 5px 0;
+    padding: 0;
+}
+.Search-block2-0:nth-child(1){
+    height: 30px;
+}
+.Search-block2-0:nth-child(2){
+    align-self: center;
+}
+.Search-block2-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    color: var(--grey);
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+.Search-blockDate {
+    display: flex;
+    flex-direction: column;
+}
+.Search-blockDateError {
+    height: 20px;
+}
+.DateText {
+    display:none;
+    color: rgba(255, 0, 0, 0.70);
+    text-align: center;
+    width: 402px;
+    margin: 5px 0 0 0;
+    padding: 0;
+    font-size: 14px;
+}
+.DateText.active {
+    display:block;
+}
+.SearchButton {
+    text-align: end;
+    margin-right: 30px;
+}
+.SearchButton p{
+    margin:0;
+    padding: 0;
+}
+.SearchButton button{
+    width: 305px;
+    height: 59px;
+    border-radius: 7px;
+    border: none;
+    background-color: var(--btn);
+    font-size: 22px;
+    color: var(--white);
+    cursor: pointer;
+}
+.SearchButton button:hover {
+    background-color: var(--btn_1);
+}
+.SearchButton button:active {
+    background-color: var(--btn);
+}
+.Search-conteiner2 {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 200px;
+}
+.Search-conteiner2-1 {
+    display:flex;
+    justify-content: center;
+    gap: 200px;
+}
+.Search-conteiner2-2 {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.SearchImage1 {
+    height: 470.21px;
+    width: 442.57px;
+}.SearchImage2 {
+    height: 111.12px;
+    width: 91px;
+}.SearchImage3 {
+    height: 68.39px;
+    width: 140.61px;
+}
+@media  (max-width: 700px) {
+    .Search {
+        display: flex;
+        flex-direction: column;
+    }
+    .Search-title {
+        padding: 20px;
+        margin: 0;
+        width: 500px;
+        text-align: left;
+    }
+    .Search-title h1{
+        font-size: 28px;
+        width: 400px;
+    }
+    .Search-title p{
+        font-size: 18px;
+        width: 250px;
+    }
+    .Search-block{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 375px;
+        height: 688px;
+    }
+    .Search-block1 {
+        padding-left: 15px
+    }
+    .Search-block2 {
+        padding: 0 15px;
+    }
+    .Search-block2-0{
+        margin:15px 0 0 0;
+    }
+    .Search-block2-1 {
+        text-align: start;
+    }
+    .DateText {
+        width: 335px;
+        font-size: 14px;
+        padding: 0;
+        margin: 5px 0 10px 0;
+    }
+    .SearchButton p {
+        text-align: left;
+    }
+    .SearchButton button{
+        width: 335px;
+        height: 59px;
+    }
+    .Search-conteiner2 {
+        gap: 0;
+    }
+    .Search-conteiner2-1 {
+        gap: 0;
+    }
+    .Search-conteiner2-2 {
+    }
+    .SearchImage1 {
+        height: 403.28px;
+        width: 397.57px;
+    }.SearchImage2 {
+        position: absolute;
+        left: 260px;
+        top: 140px;
+         height: 71.12px;
+         width: 58.24px;
+     }.SearchImage3 {
+        display: none;
+      }
+}

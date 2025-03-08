@@ -1,0 +1,69 @@
+.SlickSlider {
+    height: 250px;
+    margin: 30px;
+    padding-bottom: 60px;
+}
+
+.image {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    font-family: inter, Helvetica, sans-serif;
+    font-size: 18px;
+    height: 225px;
+    user-select: none;
+    margin:15px;
+    border-radius: 10px;
+    box-shadow:
+            7px 7px 7px var(--grey),
+            -7px -7px 7px var(--grey),
+            7px -7px 7px var(--grey),
+            -7px 7px 7px var(--grey);
+}
+.image :nth-child(1){
+    margin: 0 20px;
+    align-self: center;
+}
+.image :nth-child(2){
+    margin: 0 20px;
+}
+.SliderImage {
+    width: 64px;
+    height: 64px;
+    text-align: start;
+}
+.FaChevronRight {
+    position: absolute;
+    left: 1435px;
+    bottom: 110px;
+    font-size: 39px;
+    color: var(--grey_border);
+    cursor: pointer;
+}
+.FaChevronLeft{
+    position: absolute;
+    left: -35px;
+    bottom: 110px;
+    font-size: 39px;
+    color: var(--grey_border);
+    cursor: pointer;
+}
+.FaChevronLeft:hover, .FaChevronRight:hover {
+    color: var(--black)
+}
+.FaChevronLeft:active, .FaChevronRight:active {
+    color: var(--grey);
+}
+@media screen and (max-width: 768px) {
+    .image {
+        height: 188px;
+    }
+    .SliderImage {
+        width: 57.82px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .image {
+        height: 188px;
+    }
+}
